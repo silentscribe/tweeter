@@ -23,7 +23,7 @@ body {
 
 main.container {
   width: 450px;
-  justify-content: center;
+  min-height: 800px;
   background-color: white;
   margin: 80px auto 0px auto;
 }
