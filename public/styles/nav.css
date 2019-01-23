@@ -6,6 +6,7 @@
 
 #nav-bar {
   position: fixed;
+  z-index: 2;
   width: 100%;
   top: 0px;
   background-color: #00a087;

@@ -1,5 +1,5 @@
 $(document).ready(function () {
-  console.log('Document is Ready');
+  console.log('DOM is Ready');
 
 const tweet = document.querySelector('#tweetbox');
 
@@ -17,4 +17,7 @@ const tweet = document.querySelector('#tweetbox');
 
   tweet.addEventListener('keyup', textCounter);
 
+
 });
+
+

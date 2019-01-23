@@ -3,7 +3,7 @@ section.new-tweet {
   border: 1px solid #c0c0c075;
   position: relative;
   background-color: #eee;
-  top: 120px;
+  top: 35px;
   border-radius: 10px;
   padding-bottom: 10px
 
@@ -14,16 +14,20 @@ section h2 {
   border-bottom: 2px solid;
 }
 
-textarea {
+textarea#tweetbox {
   width: 94%;
   margin: 0 12px;
   position: relative;
   padding: 5px;
-
+  height: 80px;
+  border-radius: 5px;
+  border: 1px solid #c0c0c075;
 }
 
 input {
   margin-left: 12px;
+  border-radius: 5px;
+  background-color: #daf7a694;
 }
 
 span.counter {

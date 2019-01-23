@@ -1,0 +1,48 @@
+section#tweet-log {
+  margin: 2em;
+  border: 2px solid #c0c0c075;
+  position: relative;
+  background-color: #eee;
+  top: 10px;
+  border-radius: 10px;
+
+}
+
+article.tweet p {
+  padding: 30px 10px;
+  background-color: white;
+  margin: 0;
+  font-size: 18px
+}
+
+article.tweet footer {
+  background-color: white;
+  border-top: 1px solid #c0c0c075;
+  height: 2em;
+  border-bottom-right-radius: 10px;
+  border-bottom-left-radius: 10px;
+  padding: 5px 10px;
+}
+
+article.tweet header {
+  padding: 5px 10px;
+  color: #3e7686;
+}
+
+article.tweet img {
+  width: 50px;
+  height: 50px;
+  border-radius: 5px;
+}
+
+span.username {
+  font-size: 30px;
+  font-weight: bold;
+
+}
+
+span.tw-name {
+  float: right;
+  color: grey;
+  padding-top: 10px;
+}
