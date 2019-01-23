@@ -34,26 +34,17 @@
     <main class="container">
       <section class="new-tweet">
         <h2>Compose Tweet</h2>
-        <form action="/tweets" method="POST" >
-          <textarea id="tweetbox" name="tweet-text" placeholder="What are you humming about?"></textarea>
+        <form id="compose" action="/tweets" method="POST" >
+          <textarea id="tweetbox" name="text" placeholder="What are you humming about?"></textarea>
           <input type="submit" value="Tweet">
           <span class="counter">140</span>
         </form>
       </section>
 
       <section id="tweet-log">
-        <article class="tweet">
-          <header>
-            <img src=https://vanillicon.com/788e533873e80d2002fa14e1412b4188.png>
-            <span class="username">Billy Bob</span>
-            <span class="tw-name">@Mr Blah</span>
-          </header>
-          <p>This is the body.This is the bodyThis is the bodyThis is the bodyThis is the body...</p>
-          <footer>10 days ago
-            <span id="icon">🏴↻🖤</span>
-          </footer>
-        </article>
+
       </section>
+
 
     </main>
 

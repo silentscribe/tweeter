@@ -19,5 +19,3 @@ const tweet = document.querySelector('#tweetbox');
 
 
 });
-
-
