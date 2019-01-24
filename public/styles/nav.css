@@ -16,6 +16,21 @@
 
 }
 
+#compose-button {
+  float: right;
+  padding: 15px;
+  margin-top: 13px;
+  border-radius: 8px;
+  background-color: #daf7a6;
+
+}
+
+#compose-button:hover {
+  background-color: white;
+  color: #00a087;
+
+}
+
 
 #nav-bar .header {
   top: 10px;

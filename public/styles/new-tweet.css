@@ -1,11 +1,12 @@
-section.new-tweet {
+.new-tweet {
   margin: 2em;
   border: 1px solid #c0c0c075;
   position: relative;
   background-color: #eee;
   top: 35px;
   border-radius: 10px;
-  padding-bottom: 10px
+  padding-bottom: 10px;
+  display: none;
 
 }
 
