@@ -114,15 +114,24 @@ $(function () {
 
   $("#compose").on('submit', function (event) {
     event.preventDefault();
-    $('#tweetbox').empty();
     const serialized = $(this).serialize();
-    $.ajax({
-      method: 'POST',
-      url: '/tweets',
-      data: serialized
-    }).done(function () {
-      loadTweets();
-    });
+    const textBox = $(this).find('#tweetbox')
+    if (($('#tweetbox').val()).length === 0) {
+      alert('Compose field cannot be empty');
+      return;
+    } else if (($('#tweetbox').val()).length > 141) {
+      alert('Message cannot be greater than 140 characters');
+      return;
+    } else {
+      $.ajax({
+        method: 'POST',
+        url: '/tweets',
+        data: serialized
+      }).done(function () {
+        textBox.val('');
+        loadTweets();
+      });
+    }
   });
 
   function loadTweets () {
@@ -134,7 +143,7 @@ $(function () {
       renderTweets(tweets);
     });
   }
-
+  loadTweets();
 })
 
 
