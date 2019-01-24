@@ -5,7 +5,6 @@
  */
 $(function () {
 
-
   function days (created) {
     const today = Date.now()
     const daysSince = Math.floor((today - created) / 87900000);
