@@ -61,12 +61,14 @@ $(function () {
   $("#compose").on('submit', function (event) {
     event.preventDefault();
     const serialized = $(this).serialize();
-    const textBox = $(this).find('#tweetbox')
+    const textBox = $(this).find('#tweetbox');
     if (($('#tweetbox').val()).length === 0) {
-      alert('Compose field cannot be empty');
+      $('#error').text('Compose field cannot be empty');
+      $('#error').css('display', 'flex');
       return;
     } else if (($('#tweetbox').val()).length > 141) {
-      alert('Message cannot be greater than 140 characters');
+      $('#error').text('Message cannot be greater than 140 characters');
+      $('#error').css('display', 'flex');
       return;
     } else {
       $.ajax({
@@ -78,6 +80,10 @@ $(function () {
         loadTweets();
       });
     }
+  });
+
+  $('#tweetbox').on('keyup click', function () {
+    $('#error').css('display', 'none');
   });
 
   function loadTweets () {
