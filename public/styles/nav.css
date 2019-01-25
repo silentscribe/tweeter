@@ -8,6 +8,7 @@
   position: fixed;
   z-index: 2;
   width: 100%;
+  min-width: 450px;
   top: 0px;
   background-color: #00a087;
   height: 80px;
