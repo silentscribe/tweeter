@@ -7,8 +7,13 @@ $(function () {
 
   function days (created) {
     const today = Date.now()
-    const daysSince = Math.floor((today - created) / 87900000);
-    return daysSince;
+    let daysSince = Math.floor((today - created) / 86400000);
+    console.log(daysSince);
+    if (daysSince < 1){
+      return 'Today';
+    } else {
+      return daysSince + ' days ago';
+    }
   }
 
   function clearScript (text){
@@ -38,7 +43,7 @@ $(function () {
             <p>${tweetMessage}</p>
             <footer>
               <div class="timestamp">
-                ${day} days ago
+                ${day}
               </div>
               <div class="icon-wrap">
                 <span>🏴↻🖤</span>
