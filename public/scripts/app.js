@@ -61,6 +61,7 @@ $(function () {
     event.preventDefault();
     const serialized = $(this).serialize();
     const textBox = $(this).find('#tweetbox');
+    const counter = $(this).find('#counter');
     if (($('#tweetbox').val()).length === 0) {
       $('#error').text('Compose field cannot be empty');
       $('#error').css('display', 'flex');
@@ -70,6 +71,7 @@ $(function () {
       $('#error').css('display', 'flex');
       return;
     } else {
+      $('#counter').text(140);
       $.ajax({
         method: 'POST',
         url: '/tweets',
