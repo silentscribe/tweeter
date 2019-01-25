@@ -5,18 +5,18 @@
  */
 $(function () {
 
+  // Tracks the time since the post was created.
   function days (created) {
-    const today = Date.now()
+    const today = Date.now();
     let daysSince = Math.floor((today - created) / 86400000);
-    console.log(daysSince);
-    if (daysSince < 1){
+    if (daysSince < 1) {
       return 'Today';
-    } else {
-      return daysSince + ' days ago';
     }
+    return daysSince + ' days ago';
   }
 
-  function clearScript (text){
+  // Clears any scripting attempts by removing the <> upon tweet submission.
+  function clearScript (text) {
     let newMessage = [];
     for (var i = 0; i < text.length; i++) {
       if (text[i] === '<' || text[i] === '>') {
@@ -28,10 +28,11 @@ $(function () {
     return newMessage.join('');
   }
 
+  // Creates a new tweet using database object information
   function createTweetElement (tweetObj) {
-    let tweetMessage = clearScript(tweetObj.content.text);
-    let day = days(tweetObj.created_at)
-    let $tweet = (`
+    const tweetMessage = clearScript(tweetObj.content.text);
+    const day = days(tweetObj.created_at);
+    const $tweet = (`
 
       <div class="space">
           <article class="tweet">
@@ -55,13 +56,15 @@ $(function () {
     return $tweet;
   }
 
+  // Loops through the tweets and generates the list to post to the page.
   function renderTweets (tweets) {
     tweets.forEach((tweet) => {
       const article = createTweetElement(tweet);
       $('#tweet-log').prepend(article);
-    })
+    });
   }
 
+  // Event response upon new tweet submission.
   $("#compose").on('submit', function (event) {
     event.preventDefault();
     const serialized = $(this).serialize();
@@ -88,10 +91,12 @@ $(function () {
     }
   });
 
+  // Event to hide the error box once user begins typing in the compose box again.
   $('#tweetbox').on('keyup click', function () {
     $('#error').css('display', 'none');
   });
 
+  // AJAX Get request
   function loadTweets () {
     $.ajax({
       method: 'GET',
@@ -102,6 +107,7 @@ $(function () {
     });
   }
 
+  // Handles clicks on the compose button
   $('#compose-button').on('click', function (){
     if ($('.new-tweet:first').is(':hidden')) {
       $('.new-tweet').show('slow');
@@ -109,10 +115,9 @@ $(function () {
     } else {
       $('.new-tweet').slideUp();
     }
-
   });
 
+  // Loads tweets on first page load
   loadTweets();
 })
-
 

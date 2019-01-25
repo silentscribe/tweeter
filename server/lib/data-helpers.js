@@ -7,7 +7,7 @@ const simulateDelay = require('./util/simulate-delay');
 module.exports = function makeDataHelpers (db) {
   return {
 
-    // Saves a tweet to `db`
+    // Saves a tweet to `mongoDB`
     saveTweet: function (newTweet, callback) {
       db.collection('tweets').insertOne(newTweet);
       callback(null, true);

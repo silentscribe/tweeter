@@ -1,7 +1,7 @@
 $(function () {
-  console.log('DOM is Ready');
+  // A counter function specifically for keeping track of counter on compose new tweet box.
 
-const tweet = document.querySelector('#tweetbox');
+  const tweet = document.querySelector('#tweetbox');
 
   function textCounter (event) {
     let counter = document.querySelector('.counter');
@@ -16,10 +16,4 @@ const tweet = document.querySelector('#tweetbox');
   }
 
   tweet.addEventListener('keyup', textCounter);
-
-  // $('form.compose, input').on('click', function () {
-  //   textCounter();
-  // });
-
 });
-
